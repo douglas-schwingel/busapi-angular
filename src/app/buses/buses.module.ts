@@ -9,7 +9,7 @@ import {BusModule} from "./bus/bus.module";
   imports: [
     CommonModule,
     BusListModule,
-    BusModule,
+    BusModule
   ],
 })
 export class BusesModule { }

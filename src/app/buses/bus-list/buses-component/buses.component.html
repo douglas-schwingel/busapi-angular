@@ -1,7 +1,11 @@
-<div class="container">
-  <div class="row mb-3 mt-3 justify-content-sm-center" *ngFor="let row of rows">
-    <div class="mb-3 col-lg-3 col-md-6 col-sm-auto col-6" *ngFor="let bus of row">
+<div class="container" *ngIf="buses.length else noBuses">
+  <div class="row m-3 justify-content-sm-center" *ngFor="let row of rows">
+    <div class="mb-3 col-lg-3 col-md-6 col-sm-auto col-6" *ngFor="let bus of row" apDarkenOnHover>
       <ba-single-bus [id]="bus.id" [nome]="bus.nome" [codigo]="bus.codigo"></ba-single-bus>
     </div>
   </div>
 </div>
+
+<ng-template #noBuses>
+  <h3 class="text-center text-muted mt-3">Nothing to show</h3>
+</ng-template>

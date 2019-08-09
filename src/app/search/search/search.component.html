@@ -1,0 +1,13 @@
+<div class="container">
+  <form class="form mt-3">
+    <div class="row justify-content-center">
+      <div class="input-group col-6">
+        <div class="input-group-prepend align-self-center mr-2">
+          <i aria-hidden="true" class="fa fa-search"></i>
+        </div>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+               (keyup)="debounce.next($event.target.value)" [value]="value">
+      </div>
+    </div>
+  </form>
+</div>

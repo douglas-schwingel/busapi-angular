@@ -1,5 +1,5 @@
-import {Input, NgModule} from '@angular/core';
-import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {BusListComponent} from './buses/bus-list/bus-list.component';
 import {BusListResolver} from "./buses/bus-list/bus-list.resolver";
 import {NotFoundErrorComponent} from "./errors/not-found-error/not-found-error.component";
