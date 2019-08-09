@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Código</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let bus of buses">
+    <th scope="row">{{bus.id}}</th>
+    <td>{{bus.nome}}</td>
+    <td>{{bus.codigo}}</td>
+  </tr>
+  </tbody>
+</table>
