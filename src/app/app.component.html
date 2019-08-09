@@ -1,2 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" style="font-size: 2rem">BusApi</a>
+  <div class="collapse navbar-collapse" id="navbarToggler" [ngClass]="{'show': isCollapsed}">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <router-outlet></router-outlet>

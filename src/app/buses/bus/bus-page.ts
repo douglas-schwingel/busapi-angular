@@ -1,8 +1,8 @@
-import {BusModel} from './bus-model';
+import {Bus} from './bus';
 import {Pageable} from './pageable';
 
 export class BusPage {
-  content: BusModel[];
+  content: Bus[];
   empty: boolean;
   number: number;
   numberOfElements: number;

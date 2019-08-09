@@ -10,7 +10,7 @@ export class BusService {
   constructor(private http: HttpClient) {}
 
   listBusLinesPaginated(page: number) {
-    const params = new HttpParams().append('page', page.toString()).append('size', '15');
+    const params = new HttpParams().append('page', page.toString()).append('size', '16');
     return this.http.get<BusPage>(`${API}/lines`, {params});
   }
 }

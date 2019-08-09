@@ -1,8 +1,9 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {BusService} from '../bus.service';
-import {BusPage} from '../bus-page';
+
+import {BusService} from '../bus/bus.service';
+import {BusPage} from '../bus/bus-page';
 
 @Injectable({providedIn: 'root'})
 export class BusListResolver implements Resolve<Observable<BusPage>> {

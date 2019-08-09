@@ -1,4 +1,4 @@
-export class BusModel {
+export class Bus {
   id: number;
   codigo: string;
   nome: string;

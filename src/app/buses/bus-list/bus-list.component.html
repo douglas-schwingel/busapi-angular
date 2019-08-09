@@ -1,0 +1,9 @@
+<div class="container">
+  <form class="form mt-3">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+      (keyup)="debounce.next($event.target.value)"
+    >
+  </form>
+  {{ filter }}
+  <ba-buses [buses]="buses | filterByName: filter"></ba-buses>
+</div>
