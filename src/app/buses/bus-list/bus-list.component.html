@@ -1,9 +1,15 @@
 <div class="container">
   <form class="form mt-3">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-      (keyup)="debounce.next($event.target.value)"
-    >
+    <div class="input-group">
+      <div class="input-group-prepend align-self-center mr-2">
+        <i aria-hidden="true" class="fa fa-search"></i>
+      </div>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+             (keyup)="debounce.next($event.target.value)"
+      >
+    </div>
   </form>
-  {{ filter }}
   <ba-buses [buses]="buses | filterByName: filter"></ba-buses>
 </div>
+
+<ba-load-button (click)="load()" [hasMore]="hasMore"></ba-load-button>

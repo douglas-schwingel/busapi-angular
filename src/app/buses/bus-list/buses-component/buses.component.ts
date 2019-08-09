@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Bus} from "../bus/bus";
+import {Bus} from "../../bus/bus";
 
 @Component({
   selector: 'ba-buses',

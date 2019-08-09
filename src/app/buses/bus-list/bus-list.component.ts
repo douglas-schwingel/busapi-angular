@@ -4,6 +4,7 @@ import {BusPage} from '../bus/bus-page';
 import {ActivatedRoute} from '@angular/router';
 import {Subject} from "rxjs";
 import {debounceTime} from "rxjs/operators";
+import {BusService} from "../bus/bus.service";
 
 @Component({
   selector: 'app-bus-list',
@@ -16,8 +17,9 @@ export class BusListComponent implements OnInit, OnDestroy {
   private buses: Bus[];
   @Input() filter = '';
   debounce: Subject<string> = new Subject<string>();
+  hasMore: boolean = true;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private service: BusService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.page = this.activatedRoute.snapshot.data.pageable;
@@ -27,6 +29,14 @@ export class BusListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.debounce.unsubscribe();
+  }
+
+  load() {
+    this.service.listBusLinesPaginated(++this.page.number)
+      .subscribe(page => {
+        this.buses = this.buses.concat(page.content);
+        if(page.number == page.totalPages) this.hasMore = false;
+      })
   }
 
 }
